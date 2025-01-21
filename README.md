@@ -4,7 +4,7 @@ A **Fashion Recommender System** that suggests similar fashion items based on an
 
 ### Live Demo
 
-Check out the live version of my portfolio: [Trisha's Portfolio]( http://192.168.0.103:8501)
+Check out the live demo of the project: [Fashion Recommender System]( http://192.168.0.103:8501)
 
 
 ---

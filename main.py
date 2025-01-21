@@ -19,6 +19,68 @@ model = ResNet50(weights='imagenet', include_top=False, input_shape=(224, 224, 3
 model.trainable = False
 model = tensorflow.keras.Sequential([model, GlobalMaxPooling2D()])
 
+
+
+# Custom CSS
+st.markdown("""
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        h1 {
+            color: #ffa500;
+            text-align: center;
+        }
+        .file-upload {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            background-color: #ffa500;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ffb733;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .recommended-images {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .recommended-images img {
+            width: 120px;
+            border-radius: 10px;
+            margin: 10px;
+            border: 2px solid #ffa500;
+        }
+        .recommended-images img:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 st.title('✨Fashion Recommender System✨')
 
 # Ensure 'uploads' directory exists
@@ -77,3 +139,6 @@ if uploaded_file is not None:
                 st.image(filenames[indices[0][i]], width=100)
     else:
         st.error("File upload failed. Please try again.")
+
+
+
